@@ -3,7 +3,6 @@
 #include <unistd.h>
  
 int main(int argc, char **argv){
-	int prueba;
 	int elementos = 0;
 	char c = 0;
 	
@@ -21,15 +20,37 @@ int main(int argc, char **argv){
 				exit(1);
 		}
 	}
-
+	if(elementos<=0){
+		printf("Numero de personas invalido\n");
+		exit(1);
+	}
 	//Los resultados de sus calculos van en estas variables.
 	//Puede declarar más variables si lo necesita.
 	float sum = 0.0f;
 	float max_imc = 0.0f;
-	
-	
-	
-	
+	float peso=0.00f;
+	float altura=0.00f;
+	for (int contador=0;contador<elementos;contador++){
+		printf("Peso: ");
+		scanf("%f", &peso);
+		if(peso<0){
+			printf("Numero invalido\n");
+			exit(1);
+		}
+		printf("Altura: ");
+		scanf("%f", &altura);
+		if(altura<0){
+			printf("Numero invalido\n");
+			exit(1);
+		}
+		altura=altura*altura;
+		float imc=peso/altura;
+		sum=sum+imc;
+		if (max_imc<imc){
+			max_imc=imc;
+		}
+	}
+	sum=sum/elementos;
 	//No modifique estas lineas
 	//Guarde los resultados en las 
 	//variables sum y max_imc
