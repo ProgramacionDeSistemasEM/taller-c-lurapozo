@@ -3,7 +3,7 @@
 #include <unistd.h>
  
 int main(int argc, char **argv){
-	
+	int prueba;
 	int elementos = 0;
 	char c = 0;
 	
